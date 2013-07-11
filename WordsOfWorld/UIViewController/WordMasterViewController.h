@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  WordMasterViewController.h
 //  WordsOfWorld
 //
 //  Created by Brian Quan on 10/07/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface WordMasterViewController : UIViewController
 
 @end

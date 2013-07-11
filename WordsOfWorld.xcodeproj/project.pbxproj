@@ -16,19 +16,23 @@
 		FBF07195178D58CD0060EFA0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF07194178D58CD0060EFA0 /* Default.png */; };
 		FBF07197178D58CD0060EFA0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF07196178D58CD0060EFA0 /* Default@2x.png */; };
 		FBF07199178D58CD0060EFA0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF07198178D58CD0060EFA0 /* Default-568h@2x.png */; };
-		FBF0719C178D58CD0060EFA0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF0719B178D58CD0060EFA0 /* FirstViewController.m */; };
-		FBF0719E178D58CD0060EFA0 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF0719D178D58CD0060EFA0 /* first.png */; };
-		FBF071A0178D58CD0060EFA0 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF0719F178D58CD0060EFA0 /* first@2x.png */; };
-		FBF071A3178D58CD0060EFA0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071A2178D58CD0060EFA0 /* SecondViewController.m */; };
-		FBF071A5178D58CD0060EFA0 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF071A4178D58CD0060EFA0 /* second.png */; };
-		FBF071A7178D58CD0060EFA0 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBF071A6178D58CD0060EFA0 /* second@2x.png */; };
-		FBF071AA178D58CD0060EFA0 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF071A8178D58CD0060EFA0 /* FirstViewController.xib */; };
-		FBF071AD178D58CD0060EFA0 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF071AB178D58CD0060EFA0 /* SecondViewController.xib */; };
 		FBF071B5178D58CD0060EFA0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF071B4178D58CD0060EFA0 /* SenTestingKit.framework */; };
 		FBF071B6178D58CD0060EFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07182178D58CD0060EFA0 /* UIKit.framework */; };
 		FBF071B7178D58CD0060EFA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07184178D58CD0060EFA0 /* Foundation.framework */; };
 		FBF071BF178D58CD0060EFA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBF071BD178D58CD0060EFA0 /* InfoPlist.strings */; };
 		FBF071C2178D58CD0060EFA0 /* WordsOfWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071C1178D58CD0060EFA0 /* WordsOfWorldTests.m */; };
+		FBF071D8178D5C210060EFA0 /* WordDictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */; };
+		FBF071DB178D5C550060EFA0 /* WordPuzzleHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */; };
+		FBF071DE178D5C790060EFA0 /* WordStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071DD178D5C790060EFA0 /* WordStatisticsViewController.m */; };
+		FBF071E1178D5C8C0060EFA0 /* WordMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071E0178D5C8C0060EFA0 /* WordMasterViewController.m */; };
+		FBF071E4178D5CAD0060EFA0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071E3178D5CAD0060EFA0 /* SettingsViewController.m */; };
+		FBF071EA178D608F0060EFA0 /* WWConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071E9178D608F0060EFA0 /* WWConstant.m */; };
+		FBF071EF178D63A50060EFA0 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = FBF071EE178D63A50060EFA0 /* words.txt */; };
+		FBF071F3178D646D0060EFA0 /* WWCoreFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071F2178D646D0060EFA0 /* WWCoreFunction.m */; };
+		FBF071F6178D7DAE0060EFA0 /* WordDefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071F5178D7DAD0060EFA0 /* WordDefinitionViewController.m */; };
+		FBF071F9178D995C0060EFA0 /* WWDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071F8178D995C0060EFA0 /* WWDefinition.m */; };
+		FBF071FC178D9A5A0060EFA0 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071FB178D9A5A0060EFA0 /* XMLParser.m */; };
+		FBF07200178DBDB80060EFA0 /* DALinedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071FF178DBDB80060EFA0 /* DALinedTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,22 +59,36 @@
 		FBF07194178D58CD0060EFA0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FBF07196178D58CD0060EFA0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FBF07198178D58CD0060EFA0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FBF0719A178D58CD0060EFA0 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		FBF0719B178D58CD0060EFA0 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FBF0719D178D58CD0060EFA0 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		FBF0719F178D58CD0060EFA0 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		FBF071A1178D58CD0060EFA0 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FBF071A2178D58CD0060EFA0 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		FBF071A4178D58CD0060EFA0 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		FBF071A6178D58CD0060EFA0 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		FBF071A9178D58CD0060EFA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		FBF071AC178D58CD0060EFA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
 		FBF071B3178D58CD0060EFA0 /* WordsOfWorldTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsOfWorldTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF071B4178D58CD0060EFA0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		FBF071BC178D58CD0060EFA0 /* WordsOfWorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsOfWorldTests-Info.plist"; sourceTree = "<group>"; };
 		FBF071BE178D58CD0060EFA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FBF071C0178D58CD0060EFA0 /* WordsOfWorldTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsOfWorldTests.h; sourceTree = "<group>"; };
 		FBF071C1178D58CD0060EFA0 /* WordsOfWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsOfWorldTests.m; sourceTree = "<group>"; };
+		FBF071D6178D5C210060EFA0 /* WordDictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionaryViewController.h; sourceTree = "<group>"; };
+		FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionaryViewController.m; sourceTree = "<group>"; };
+		FBF071D9178D5C550060EFA0 /* WordPuzzleHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPuzzleHelperViewController.h; sourceTree = "<group>"; };
+		FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPuzzleHelperViewController.m; sourceTree = "<group>"; };
+		FBF071DC178D5C790060EFA0 /* WordStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordStatisticsViewController.h; sourceTree = "<group>"; };
+		FBF071DD178D5C790060EFA0 /* WordStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordStatisticsViewController.m; sourceTree = "<group>"; };
+		FBF071DF178D5C8C0060EFA0 /* WordMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordMasterViewController.h; sourceTree = "<group>"; };
+		FBF071E0178D5C8C0060EFA0 /* WordMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordMasterViewController.m; sourceTree = "<group>"; };
+		FBF071E2178D5CAD0060EFA0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FBF071E3178D5CAD0060EFA0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FBF071E6178D5FF20060EFA0 /* BQDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BQDefine.h; sourceTree = "<group>"; };
+		FBF071E8178D608F0060EFA0 /* WWConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWConstant.h; sourceTree = "<group>"; };
+		FBF071E9178D608F0060EFA0 /* WWConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWConstant.m; sourceTree = "<group>"; };
+		FBF071EE178D63A50060EFA0 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		FBF071F1178D646D0060EFA0 /* WWCoreFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWCoreFunction.h; sourceTree = "<group>"; };
+		FBF071F2178D646D0060EFA0 /* WWCoreFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWCoreFunction.m; sourceTree = "<group>"; };
+		FBF071F4178D7DAD0060EFA0 /* WordDefinitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDefinitionViewController.h; sourceTree = "<group>"; };
+		FBF071F5178D7DAD0060EFA0 /* WordDefinitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDefinitionViewController.m; sourceTree = "<group>"; };
+		FBF071F7178D995C0060EFA0 /* WWDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDefinition.h; sourceTree = "<group>"; };
+		FBF071F8178D995C0060EFA0 /* WWDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDefinition.m; sourceTree = "<group>"; };
+		FBF071FA178D9A5A0060EFA0 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		FBF071FB178D9A5A0060EFA0 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		FBF071FE178DBDB80060EFA0 /* DALinedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALinedTextView.h; sourceTree = "<group>"; };
+		FBF071FF178DBDB80060EFA0 /* DALinedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALinedTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,18 +148,12 @@
 		FBF07188178D58CD0060EFA0 /* WordsOfWorld */ = {
 			isa = PBXGroup;
 			children = (
+				FBF071EB178D63930060EFA0 /* Estate */,
+				FBF071D0178D5BCB0060EFA0 /* Library */,
+				FBF071D1178D5BCB0060EFA0 /* MVC */,
+				FBF071D5178D5BCB0060EFA0 /* UIViewController */,
 				FBF07191178D58CD0060EFA0 /* AppDelegate.h */,
 				FBF07192178D58CD0060EFA0 /* AppDelegate.m */,
-				FBF0719A178D58CD0060EFA0 /* FirstViewController.h */,
-				FBF0719B178D58CD0060EFA0 /* FirstViewController.m */,
-				FBF0719D178D58CD0060EFA0 /* first.png */,
-				FBF0719F178D58CD0060EFA0 /* first@2x.png */,
-				FBF071A1178D58CD0060EFA0 /* SecondViewController.h */,
-				FBF071A2178D58CD0060EFA0 /* SecondViewController.m */,
-				FBF071A4178D58CD0060EFA0 /* second.png */,
-				FBF071A6178D58CD0060EFA0 /* second@2x.png */,
-				FBF071A8178D58CD0060EFA0 /* FirstViewController.xib */,
-				FBF071AB178D58CD0060EFA0 /* SecondViewController.xib */,
 				FBF07189178D58CD0060EFA0 /* Supporting Files */,
 			);
 			path = WordsOfWorld;
@@ -178,6 +190,130 @@
 				FBF071BD178D58CD0060EFA0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBF071D0178D5BCB0060EFA0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071FD178DBDB80060EFA0 /* DALinedTextView */,
+				FBF071F0178D64580060EFA0 /* WWCoreFunction */,
+				FBF071E7178D60130060EFA0 /* Constant */,
+				FBF071E5178D5FF20060EFA0 /* BQDefine */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FBF071D1178D5BCB0060EFA0 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071D2178D5BCB0060EFA0 /* Controller */,
+				FBF071D3178D5BCB0060EFA0 /* Model */,
+				FBF071D4178D5BCB0060EFA0 /* View */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		FBF071D2178D5BCB0060EFA0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071FA178D9A5A0060EFA0 /* XMLParser.h */,
+				FBF071FB178D9A5A0060EFA0 /* XMLParser.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBF071D3178D5BCB0060EFA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071F7178D995C0060EFA0 /* WWDefinition.h */,
+				FBF071F8178D995C0060EFA0 /* WWDefinition.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBF071D4178D5BCB0060EFA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBF071D5178D5BCB0060EFA0 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071D6178D5C210060EFA0 /* WordDictionaryViewController.h */,
+				FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */,
+				FBF071F4178D7DAD0060EFA0 /* WordDefinitionViewController.h */,
+				FBF071F5178D7DAD0060EFA0 /* WordDefinitionViewController.m */,
+				FBF071D9178D5C550060EFA0 /* WordPuzzleHelperViewController.h */,
+				FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */,
+				FBF071DC178D5C790060EFA0 /* WordStatisticsViewController.h */,
+				FBF071DD178D5C790060EFA0 /* WordStatisticsViewController.m */,
+				FBF071DF178D5C8C0060EFA0 /* WordMasterViewController.h */,
+				FBF071E0178D5C8C0060EFA0 /* WordMasterViewController.m */,
+				FBF071E2178D5CAD0060EFA0 /* SettingsViewController.h */,
+				FBF071E3178D5CAD0060EFA0 /* SettingsViewController.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		FBF071E5178D5FF20060EFA0 /* BQDefine */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071E6178D5FF20060EFA0 /* BQDefine.h */,
+			);
+			path = BQDefine;
+			sourceTree = "<group>";
+		};
+		FBF071E7178D60130060EFA0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071E8178D608F0060EFA0 /* WWConstant.h */,
+				FBF071E9178D608F0060EFA0 /* WWConstant.m */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		FBF071EB178D63930060EFA0 /* Estate */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071EC178D63930060EFA0 /* Images */,
+				FBF071ED178D63930060EFA0 /* Resource */,
+			);
+			path = Estate;
+			sourceTree = "<group>";
+		};
+		FBF071EC178D63930060EFA0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FBF071ED178D63930060EFA0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071EE178D63A50060EFA0 /* words.txt */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FBF071F0178D64580060EFA0 /* WWCoreFunction */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071F1178D646D0060EFA0 /* WWCoreFunction.h */,
+				FBF071F2178D646D0060EFA0 /* WWCoreFunction.m */,
+			);
+			path = WWCoreFunction;
+			sourceTree = "<group>";
+		};
+		FBF071FD178DBDB80060EFA0 /* DALinedTextView */ = {
+			isa = PBXGroup;
+			children = (
+				FBF071FE178DBDB80060EFA0 /* DALinedTextView.h */,
+				FBF071FF178DBDB80060EFA0 /* DALinedTextView.m */,
+			);
+			path = DALinedTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,12 +391,7 @@
 				FBF07195178D58CD0060EFA0 /* Default.png in Resources */,
 				FBF07197178D58CD0060EFA0 /* Default@2x.png in Resources */,
 				FBF07199178D58CD0060EFA0 /* Default-568h@2x.png in Resources */,
-				FBF0719E178D58CD0060EFA0 /* first.png in Resources */,
-				FBF071A0178D58CD0060EFA0 /* first@2x.png in Resources */,
-				FBF071A5178D58CD0060EFA0 /* second.png in Resources */,
-				FBF071A7178D58CD0060EFA0 /* second@2x.png in Resources */,
-				FBF071AA178D58CD0060EFA0 /* FirstViewController.xib in Resources */,
-				FBF071AD178D58CD0060EFA0 /* SecondViewController.xib in Resources */,
+				FBF071EF178D63A50060EFA0 /* words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +428,17 @@
 			files = (
 				FBF0718F178D58CD0060EFA0 /* main.m in Sources */,
 				FBF07193178D58CD0060EFA0 /* AppDelegate.m in Sources */,
-				FBF0719C178D58CD0060EFA0 /* FirstViewController.m in Sources */,
-				FBF071A3178D58CD0060EFA0 /* SecondViewController.m in Sources */,
+				FBF071D8178D5C210060EFA0 /* WordDictionaryViewController.m in Sources */,
+				FBF071DB178D5C550060EFA0 /* WordPuzzleHelperViewController.m in Sources */,
+				FBF071DE178D5C790060EFA0 /* WordStatisticsViewController.m in Sources */,
+				FBF071E1178D5C8C0060EFA0 /* WordMasterViewController.m in Sources */,
+				FBF071E4178D5CAD0060EFA0 /* SettingsViewController.m in Sources */,
+				FBF071EA178D608F0060EFA0 /* WWConstant.m in Sources */,
+				FBF071F3178D646D0060EFA0 /* WWCoreFunction.m in Sources */,
+				FBF071F6178D7DAE0060EFA0 /* WordDefinitionViewController.m in Sources */,
+				FBF071F9178D995C0060EFA0 /* WWDefinition.m in Sources */,
+				FBF071FC178D9A5A0060EFA0 /* XMLParser.m in Sources */,
+				FBF07200178DBDB80060EFA0 /* DALinedTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,22 +467,6 @@
 				FBF0718C178D58CD0060EFA0 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FBF071A8178D58CD0060EFA0 /* FirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBF071A9178D58CD0060EFA0 /* en */,
-			);
-			name = FirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		FBF071AB178D58CD0060EFA0 /* SecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBF071AC178D58CD0060EFA0 /* en */,
-			);
-			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 		FBF071BD178D58CD0060EFA0 /* InfoPlist.strings */ = {
@@ -415,10 +539,13 @@
 		FBF071C6178D58CD0060EFA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
 				INFOPLIST_FILE = "WordsOfWorld/WordsOfWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3C768000-53A9-45A7-9694-CCBD3C4E91DE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -426,10 +553,13 @@
 		FBF071C7178D58CD0060EFA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
 				INFOPLIST_FILE = "WordsOfWorld/WordsOfWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3C768000-53A9-45A7-9694-CCBD3C4E91DE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

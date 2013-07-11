@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  WordStatisticsViewController.h
 //  WordsOfWorld
 //
 //  Created by Brian Quan on 10/07/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface WordStatisticsViewController : UIViewController
 
 @end

@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
+#import "WordDictionaryViewController.h"
+#import "WordPuzzleHelperViewController.h"
+#import "WordStatisticsViewController.h"
+#import "WordMasterViewController.h"
+#import "SettingsViewController.h"
 
 @implementation AppDelegate
 
@@ -18,10 +20,20 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    WordDictionaryViewController *wordDictionaryViewController = [[WordDictionaryViewController alloc] initWithNibName:nil bundle:nil];
+    WordPuzzleHelperViewController *wordPuzzleHelperViewController = [[WordPuzzleHelperViewController alloc] initWithNibName:nil bundle:nil];
+    WordStatisticsViewController *wordStatisticsViewController = [[WordStatisticsViewController alloc] initWithNibName:nil bundle:nil];
+    WordMasterViewController *wordMasterViewcontroller = [[WordMasterViewController alloc] initWithNibName:nil bundle:nil];
+    SettingsViewController *settingsViewcontroller = [[SettingsViewController alloc] initWithNibName:nil bundle:nil];
+    
+    UINavigationController *dictionaryNav = [[UINavigationController alloc] initWithRootViewController:wordDictionaryViewController];
+    UINavigationController *puzzleHelperNav = [[UINavigationController alloc] initWithRootViewController:wordPuzzleHelperViewController];
+    UINavigationController *statisticsNav = [[UINavigationController alloc] initWithRootViewController:wordStatisticsViewController];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:wordMasterViewcontroller];
+    UINavigationController *settingsNav = [[UINavigationController alloc] initWithRootViewController:settingsViewcontroller];
+    
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
+    self.tabBarController.viewControllers = @[dictionaryNav, puzzleHelperNav, statisticsNav, masterNav, settingsNav];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
