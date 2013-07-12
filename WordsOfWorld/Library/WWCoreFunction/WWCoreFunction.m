@@ -10,8 +10,8 @@
 
 @implementation WWCoreFunction
 
-+ (NSArray *)loadWords{
-    NSString * fName = [[NSBundle mainBundle] pathForResource:@"words" ofType:@"txt"];
++ (NSArray *)loadWords:(NSString *)title{
+    NSString * fName = [[NSBundle mainBundle] pathForResource:title ofType:@"txt"];
     if (fName) {
         NSError *error;
         NSString* fileContents = [NSString stringWithContentsOfFile:fName encoding:NSASCIIStringEncoding error:&error];

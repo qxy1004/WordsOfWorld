@@ -11,6 +11,7 @@
 #import "WWCoreFunction.h"
 #import "BQDefine.h"
 #import "WordDefinitionViewController.h"
+#import "UITabBarController+ShowHideBar.h"
 
 @interface WordDictionaryViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>{
     UITableView *mainTable;
@@ -34,10 +35,14 @@
     }
     return self;
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.tabBarController setHidden:NO];
+}
 - (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    arrayOfWords = [WWCoreFunction loadWords];
+    arrayOfWords = [WWCoreFunction loadWords:@"words"];
     arrayOfSearch = [[NSMutableArray alloc] init];
     
     //Set up table

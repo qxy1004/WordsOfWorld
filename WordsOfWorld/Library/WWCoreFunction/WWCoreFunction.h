@@ -10,6 +10,6 @@
 
 @interface WWCoreFunction : NSObject
 
-+ (NSArray *)loadWords;
++ (NSArray *)loadWords:(NSString *)title;
 
 @end

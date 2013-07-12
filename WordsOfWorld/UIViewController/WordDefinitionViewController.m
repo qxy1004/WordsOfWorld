@@ -10,6 +10,7 @@
 #import "XMLParser.h"
 #import "BQDefine.h"
 #import "DALinedTextView.h"
+#import "UITabBarController+ShowHideBar.h"
 
 @interface WordDefinitionViewController () <NSURLConnectionDelegate>{
     NSMutableData *dataWebService;
@@ -29,6 +30,10 @@
         // Custom initialization
     }
     return self;
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.tabBarController setHidden:YES];
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
