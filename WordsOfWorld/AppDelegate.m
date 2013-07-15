@@ -19,6 +19,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:YES];
+    //UINavicagionBar text
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0], UITextAttributeTextColor,
+      [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0], UITextAttributeTextShadowColor,
+      [NSValue valueWithUIOffset:UIOffsetMake(1, 0)], UITextAttributeTextShadowOffset,
+      [UIFont fontWithName:@"Helvetica-Light" size:0.0], UITextAttributeFont,
+      nil]];
+    //UIBar text
+    [[UIBarButtonItem appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0], UITextAttributeTextColor,
+      [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0], UITextAttributeTextShadowColor,
+      [NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset,
+      [UIFont fontWithName:@"Helvetica" size:0.0], UITextAttributeFont,
+      nil] forState:UIControlStateNormal];
+    //
+    [[UISearchBar appearance] setTintColor:[UIColor whiteColor]];
+    
     // Override point for customization after application launch.
     WordDictionaryViewController *wordDictionaryViewController = [[WordDictionaryViewController alloc] initWithNibName:nil bundle:nil];
     WordPuzzleHelperViewController *wordPuzzleHelperViewController = [[WordPuzzleHelperViewController alloc] initWithNibName:nil bundle:nil];
@@ -34,6 +57,7 @@
     
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = @[dictionaryNav, puzzleHelperNav, statisticsNav, masterNav, settingsNav];
+    
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;

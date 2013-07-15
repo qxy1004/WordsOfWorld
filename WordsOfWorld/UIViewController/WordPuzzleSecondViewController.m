@@ -16,7 +16,7 @@
 
 
 #define longPressTime 1
-#define sizeOfLetterButton 40
+#define sizeOfLetterButton kScreenWidth/7.0
 #define stringOfBackButton @"Back"
 #define stringOfClearButton @"Clear"
 
@@ -148,18 +148,14 @@
     scrollView.backgroundColor = [UIColor clearColor];
     [scrollView setContentSize:CGSizeMake(kScreenWidth, sizeOfLetterButton*4)];
     
-    //Clear button
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, 0, sizeOfLetterButton, sizeOfLetterButton);
-    [button setTitle:@"Clear" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [scrollView addSubview:button];
-    
     //Letter button
     for (int i = 0; i <= 27; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        button.frame = CGRectMake(i%8*sizeOfLetterButton, i/8*sizeOfLetterButton, sizeOfLetterButton, sizeOfLetterButton);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(i%7*sizeOfLetterButton, i/7*sizeOfLetterButton, sizeOfLetterButton, sizeOfLetterButton);
+        button.backgroundColor = [UIColor whiteColor];
+        button.layer.borderColor = [UIColor blueColor].CGColor;
+        button.layer.borderWidth = 0.5f;
+        button.layer.cornerRadius = 10.0f;
         if (i == 26) {
             [button setTitle:stringOfBackButton forState:UIControlStateNormal];
         }

@@ -41,20 +41,23 @@
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
 	// Do any additional setup after loading the view.
     arrayOfWords = [WWCoreFunction loadWords:@"words"];
     arrayOfSearch = [[NSMutableArray alloc] init];
     
     //Set up table
-    mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 74, kScreenWidth, kContentHeight) style:UITableViewStylePlain];
+    mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, kContentHeight) style:UITableViewStylePlain];
     mainTable.delegate = self;
     mainTable.dataSource = self;
     [self.view addSubview:mainTable];
     
     // setup searchBar and searchDisplayController
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 74)];
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     searchBar.placeholder = @"Please enter here";
-    searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfWords count]];
+    //searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfWords count]];
+    //searchBar.tintColor = [UIColor clearColor];
     searchBar.delegate = self;
     [self.view addSubview:searchBar];
     
@@ -102,10 +105,10 @@
     
     if (tableView == searchDisplayController.searchResultsTableView) {
         cell.textLabel.text = [arrayOfSearch objectAtIndex:indexPath.row];
-        searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfSearch count]];
+        //searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfSearch count]];
     } else {
         cell.textLabel.text = [arrayOfWords objectAtIndex:indexPath.row];
-        searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfWords count]];
+        //searchBar.prompt = [NSString stringWithFormat:@"Words in total %d", [arrayOfWords count]];
     }
     
     return cell;
@@ -119,6 +122,7 @@
     } else {
         definitionViewController.string = [arrayOfWords objectAtIndex:indexPath.row];
     }
+
     [self.navigationController pushViewController:definitionViewController animated:YES];
 }
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{

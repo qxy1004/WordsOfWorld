@@ -11,6 +11,7 @@
 #import "BQDefine.h"
 #import "WordPuzzleSecondViewController.h"
 #import "UITabBarController+ShowHideBar.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define gap 10
 #define buttonWidth ((320-gap*5)/4)
@@ -47,12 +48,16 @@
     //Initialise buttons
     for (int i = 1; i <= 4; i++) {
         for (int j = 1; j <= 7; j++) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.backgroundColor = [UIColor whiteColor];
             button.frame = CGRectMake(i*gap + (i-1)*buttonWidth, j*gap + (j-1)*buttonWidth, buttonWidth, buttonWidth);
             [button setTitle:[NSString stringWithFormat:@"%d", i+(j-1)*4] forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             button.tag = i+(j-1)*4;
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            button.layer.borderColor = [UIColor blueColor].CGColor;
+            button.layer.borderWidth = 0.5f;
+            button.layer.cornerRadius = 10.0f;
             [scrollView addSubview:button];
         }
     }

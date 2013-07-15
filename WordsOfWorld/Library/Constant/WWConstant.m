@@ -9,7 +9,7 @@
 #import "WWConstant.h"
 
 NSString * const TITLE_DICTIONARY = @"Dictionary";
-NSString * const TITLE_PUZZLE = @"helper";
+NSString * const TITLE_PUZZLE = @"Helper";
 NSString * const TITLE_STATISTICS = @"Statistics";
 NSString * const TITLE_MASTER = @"Master";
 NSString * const TITLE_SETTINGS = @"Settings";
