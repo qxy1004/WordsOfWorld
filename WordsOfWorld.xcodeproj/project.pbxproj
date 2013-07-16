@@ -399,6 +399,10 @@
 		FBF074E517904A300060EFA0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF074E417904A300060EFA0 /* QuartzCore.framework */; };
 		FBF074E717904A860060EFA0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF074E617904A850060EFA0 /* CoreImage.framework */; };
 		FBF074E917904A950060EFA0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF074E817904A950060EFA0 /* Accelerate.framework */; };
+		FBF074F017953E5C0060EFA0 /* WWDictionaryWS.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074EF17953E5C0060EFA0 /* WWDictionaryWS.m */; };
+		FBF074F5179550020060EFA0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FBF074F2179550020060EFA0 /* SVProgressHUD.bundle */; };
+		FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F4179550020060EFA0 /* SVProgressHUD.m */; };
+		FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -824,6 +828,13 @@
 		FBF074E417904A300060EFA0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FBF074E617904A850060EFA0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FBF074E817904A950060EFA0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FBF074EE17953E5C0060EFA0 /* WWDictionaryWS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDictionaryWS.h; sourceTree = "<group>"; };
+		FBF074EF17953E5C0060EFA0 /* WWDictionaryWS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWDictionaryWS.m; sourceTree = "<group>"; };
+		FBF074F2179550020060EFA0 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		FBF074F3179550020060EFA0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		FBF074F4179550020060EFA0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		FBF074F7179567660060EFA0 /* WordLetterFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordLetterFilterViewController.h; sourceTree = "<group>"; };
+		FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordLetterFilterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -937,6 +948,8 @@
 		FBF071D0178D5BCB0060EFA0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FBF074F1179550020060EFA0 /* SVProgressHUD */,
+				FBF074ED17953E3C0060EFA0 /* DictionaryWS */,
 				FBF074E0179049C40060EFA0 /* RNBlurModalView */,
 				FBF071FD178DBDB80060EFA0 /* DALinedTextView */,
 				FBF071F0178D64580060EFA0 /* WWCoreFunction */,
@@ -992,6 +1005,8 @@
 				FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */,
 				FBF074D51790072C0060EFA0 /* WordPuzzleSecondViewController.h */,
 				FBF074D61790072C0060EFA0 /* WordPuzzleSecondViewController.m */,
+				FBF074F7179567660060EFA0 /* WordLetterFilterViewController.h */,
+				FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */,
 				FBF071DC178D5C790060EFA0 /* WordStatisticsViewController.h */,
 				FBF071DD178D5C790060EFA0 /* WordStatisticsViewController.m */,
 				FBF071DF178D5C8C0060EFA0 /* WordMasterViewController.h */,
@@ -1471,6 +1486,25 @@
 			path = RNBlurModalView;
 			sourceTree = "<group>";
 		};
+		FBF074ED17953E3C0060EFA0 /* DictionaryWS */ = {
+			isa = PBXGroup;
+			children = (
+				FBF074EE17953E5C0060EFA0 /* WWDictionaryWS.h */,
+				FBF074EF17953E5C0060EFA0 /* WWDictionaryWS.m */,
+			);
+			path = DictionaryWS;
+			sourceTree = "<group>";
+		};
+		FBF074F1179550020060EFA0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FBF074F2179550020060EFA0 /* SVProgressHUD.bundle */,
+				FBF074F3179550020060EFA0 /* SVProgressHUD.h */,
+				FBF074F4179550020060EFA0 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1907,6 +1941,7 @@
 				FBF074D2178FFE2C0060EFA0 /* 7.txt in Resources */,
 				FBF074D3178FFE2C0060EFA0 /* 8.txt in Resources */,
 				FBF074D4178FFE2C0060EFA0 /* 9.txt in Resources */,
+				FBF074F5179550020060EFA0 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1957,6 +1992,9 @@
 				FBF074D71790072D0060EFA0 /* WordPuzzleSecondViewController.m in Sources */,
 				FBF074DF17900E400060EFA0 /* UITabBarController+ShowHideBar.m in Sources */,
 				FBF074E3179049C40060EFA0 /* RNBlurModalView.m in Sources */,
+				FBF074F017953E5C0060EFA0 /* WWDictionaryWS.m in Sources */,
+				FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */,
+				FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

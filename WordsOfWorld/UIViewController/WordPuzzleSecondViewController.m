@@ -13,14 +13,14 @@
 #import "WWCoreFunction.h"
 #import "RNBlurModalView.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "WordLetterFilterViewController.h"
 
 #define longPressTime 1
 #define sizeOfLetterButton kScreenWidth/7.0
 #define stringOfBackButton @"Back"
 #define stringOfClearButton @"Clear"
 
-@interface WordPuzzleSecondViewController () <UITableViewDataSource, UITableViewDelegate>{
+@interface WordPuzzleSecondViewController () <UITableViewDataSource, UITableViewDelegate, LetterFilter>{
     UITableView *mainTable;
     NSArray *arrayOfWords;
     UIView *verticalView;
@@ -29,6 +29,7 @@
     BOOL isLocked;
     
     int indexOfChoosen;
+    NSMutableArray *results;
 }
 
 @end
@@ -43,8 +44,8 @@
     }
     return self;
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     [self.tabBarController setHidden:YES];
 }
 - (void)viewDidLoad{
@@ -53,7 +54,7 @@
     
     arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //Set up table
     mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight) style:UITableViewStylePlain];
@@ -64,8 +65,8 @@
     //Add explain label in the bottom
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight + kScreenToolBarHeight/3.0, kScreenWidth, kScreenToolBarHeight/3.0*2)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"Move and hold on this area";
-    label.textColor = [UIColor whiteColor];
+    label.text = @"Swipe and hold on this area";
+    label.textColor = [UIColor blackColor];
     label.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:label];
@@ -75,7 +76,7 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/(float)self.sizeOfWord*(i-1), kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight, kScreenWidth/(float)self.sizeOfWord, kScreenToolBarHeight/3.0)];
         label.textAlignment = NSTextAlignmentCenter;
         label.text = [NSString stringWithFormat:@"%d", i];
-        label.textColor = [UIColor whiteColor];
+        label.textColor = [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0];
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont systemFontOfSize:10];
         
@@ -88,11 +89,16 @@
     
     //Add Clear button
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:stringOfClearButton
+                                   initWithTitle:@"Letters"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
-                                   action:@selector(clearButtonPress)];
-    self.navigationItem.rightBarButtonItem = clearButton;
+                                   action:@selector(letterButton)];
+    UIBarButtonItem *resetButton = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"Reset"
+                                    style:UIBarButtonItemStyleBordered
+                                    target:self
+                                    action:@selector(resetButton)];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:clearButton, resetButton, nil];
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -106,7 +112,6 @@
 
 #pragma mark - Self functions
 - (void)buttonClick:(UIButton *)sender{
-    
     isLocked = NO;
     
     UIButton *button = sender;
@@ -115,8 +120,7 @@
         [modal hideWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut completion:^{
             //Update UITableView
             NSLog(@"Press back button");
-            indexOfChoosen = -1;
-            self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
+            [self setup];
         }];
     }
     else if ([button.titleLabel.text isEqualToString:stringOfClearButton]) {
@@ -124,18 +128,14 @@
             //Update UITableView
             NSLog(@"Press clear button");
             arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
-            [mainTable reloadData];
-            indexOfChoosen = -1;
-            self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
+            [self setup];
         }];
     }
     else{
         [modal hideWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut completion:^{
             //Update UITableView
             arrayOfWords = [self filterCurrentWords:arrayOfWords withCharacer:button.titleLabel.text withIndex:indexOfChoosen];
-            [mainTable reloadData];
-            indexOfChoosen = -1;
-            self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
+            [self setup];
         }];
     }
 }
@@ -153,7 +153,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i%7*sizeOfLetterButton, i/7*sizeOfLetterButton, sizeOfLetterButton, sizeOfLetterButton);
         button.backgroundColor = [UIColor whiteColor];
-        button.layer.borderColor = [UIColor blueColor].CGColor;
+        button.layer.borderColor = [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0].CGColor;
         button.layer.borderWidth = 0.5f;
         button.layer.cornerRadius = 10.0f;
         if (i == 26) {
@@ -223,11 +223,67 @@
     
     return rtn;
 }
-- (void)clearButtonPress{
+- (void)letterButton{
+    WordLetterFilterViewController *letterViewController = [[WordLetterFilterViewController alloc] initWithNibName:nil bundle:nil];
+    letterViewController.delegate = self;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:letterViewController];
+    navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:navController animated:YES completion:nil];
+}
+- (void)resetButton{
     arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+    [self setup];
+}
+- (void)setup{
     [mainTable reloadData];
     indexOfChoosen = -1;
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
+}
+- (void)doPermute:(NSMutableArray *)input output:(NSMutableArray *)output used:(NSMutableArray *)used size:(int)size level:(int)level{
+    NSLog(@"running");
+    if (size == level) {
+        NSString *word = [output componentsJoinedByString:@""];
+        if ([arrayOfWords containsObject:word]) {
+            [results addObject:word];
+        }
+        return;
+    }
+    
+    level++;
+    
+    for (int i = 0; i < input.count; i++) {
+        if ([used[i] boolValue]) {
+            continue;
+        }
+        used[i] = [NSNumber numberWithBool:YES];
+        
+        [output addObject:input[i]];
+        
+        [self doPermute:input output:output used:used size:size level:level];
+        //doPermute(input, output, used, size, level);
+        used[i] = [NSNumber numberWithBool:NO];
+        [output removeLastObject];
+    }
+}
+- (NSArray *)getPermutations:(NSString *)input size:(int)size{
+    results = [[NSMutableArray alloc] init];
+    NSMutableArray *chars = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [input length]; i++) {
+        NSString *ichar  = [NSString stringWithFormat:@"%c", [input characterAtIndex:i]];
+        [chars addObject:ichar];
+    }
+    
+    NSMutableArray *output = [[NSMutableArray alloc] init];
+    NSMutableArray *used = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < chars.count; i++) {
+        [used addObject:[NSNumber numberWithBool:NO]];
+    }
+    
+    [self doPermute:chars output:output used:used size:size level:0];
+    //NSLog(@"%@", results);
+    return results;
 }
 
 #pragma mark - Table View Data Source Methods
@@ -260,12 +316,13 @@
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*width, 0, width, mainTable.rowHeight)];
         label.text = [[arrayOfWords objectAtIndex:indexPath.row] substringWithRange:NSMakeRange(i, 1)];
         label.backgroundColor = [UIColor clearColor];
-        //label.backgroundColor = (i%2==0)?[UIColor clearColor]:[UIColor lightGrayColor];
+        label.font = [UIFont systemFontOfSize:15];
+        label.adjustsFontSizeToFitWidth = YES;
         label.textAlignment = NSTextAlignmentCenter;
         [cell.contentView addSubview:label];
     }
     
-    cell.contentView.backgroundColor = (indexPath.row%2==0)?[UIColor clearColor]:[UIColor lightGrayColor];
+    //cell.contentView.backgroundColor = (indexPath.row%2==0)?[UIColor clearColor]:[UIColor lightGrayColor];
     
     return cell;
 }
@@ -349,7 +406,23 @@
     indexOfChoosen = -1;
 }
 
-
+#pragma mark - LetterFilter delegate
+- (void)getLetterFilter:(NSString *)string{
+    NSLog(@"%@", string);
+    if ([string length] < self.sizeOfWord) {
+        arrayOfWords = nil;
+        arrayOfWords = [NSArray new];
+        [self setup];
+        return;
+    }
+    /*
+    for (int i = 0; i < [array count]; i++) {
+        [self loopFiltering:arrayOfWords withCharacter:[array objectAtIndex:0] withIndex:0];
+    }
+     */
+    arrayOfWords = [self getPermutations:string size:self.sizeOfWord];
+    [self setup];
+}
 
 @end
 

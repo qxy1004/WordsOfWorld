@@ -21,7 +21,6 @@
     
     [UIView animateWithDuration:0.25 animations:^{
         for(UIView *view in self.view.subviews){
-            NSLog(@"%@", [[view class] description]);
             if([view isKindOfClass:[UITabBar class]]){
                 [view setFrame:CGRectMake(view.frame.origin.x, fHeight, view.frame.size.width, view.frame.size.height)];
             }else{

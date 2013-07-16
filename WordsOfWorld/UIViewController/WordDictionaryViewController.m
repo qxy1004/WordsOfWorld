@@ -51,6 +51,8 @@
     mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, kContentHeight) style:UITableViewStylePlain];
     mainTable.delegate = self;
     mainTable.dataSource = self;
+    mainTable.backgroundColor = [UIColor clearColor];
+    mainTable.backgroundView = nil;
     [self.view addSubview:mainTable];
     
     // setup searchBar and searchDisplayController
@@ -99,6 +101,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        [cell.textLabel setTextColor:[UIColor blackColor]];
+        [cell.textLabel setBackgroundColor:[UIColor clearColor]];
+        cell.textLabel.font = [UIFont systemFontOfSize:20];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];

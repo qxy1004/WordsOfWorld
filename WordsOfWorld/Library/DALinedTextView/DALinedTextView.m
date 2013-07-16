@@ -78,7 +78,7 @@
         
         // Create un-mutated floats outside of the for loop.
         // Reduces memory access.
-        CGFloat baseOffset = -3.0f + self.font.descender;
+        CGFloat baseOffset = -7.0f + self.font.descender;
         CGFloat screenScale = [UIScreen mainScreen].scale;
         CGFloat boundsX = self.bounds.origin.x;
         CGFloat boundsWidth = self.bounds.size.width;
