@@ -403,6 +403,9 @@
 		FBF074F5179550020060EFA0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FBF074F2179550020060EFA0 /* SVProgressHUD.bundle */; };
 		FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F4179550020060EFA0 /* SVProgressHUD.m */; };
 		FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */; };
+		FBF074FD1796FA990060EFA0 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */; };
+		FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */; };
+		FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -835,6 +838,13 @@
 		FBF074F4179550020060EFA0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		FBF074F7179567660060EFA0 /* WordLetterFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordLetterFilterViewController.h; sourceTree = "<group>"; };
 		FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordLetterFilterViewController.m; sourceTree = "<group>"; };
+		FBF074FB1796FA990060EFA0 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		FBF074FF1796FD2D0060EFA0 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		FBF075001796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		FBF075021796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -948,6 +958,8 @@
 		FBF071D0178D5BCB0060EFA0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */,
+				FBF074FA1796FA980060EFA0 /* ODRefreshControl */,
 				FBF074F1179550020060EFA0 /* SVProgressHUD */,
 				FBF074ED17953E3C0060EFA0 /* DictionaryWS */,
 				FBF074E0179049C40060EFA0 /* RNBlurModalView */,
@@ -1505,6 +1517,27 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		FBF074FA1796FA980060EFA0 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				FBF074FB1796FA990060EFA0 /* ODRefreshControl.h */,
+				FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
+			sourceTree = "<group>";
+		};
+		FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FBF074FF1796FD2D0060EFA0 /* SVPullToRefresh.h */,
+				FBF075001796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.h */,
+				FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */,
+				FBF075021796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.h */,
+				FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1995,6 +2028,9 @@
 				FBF074F017953E5C0060EFA0 /* WWDictionaryWS.m in Sources */,
 				FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */,
 				FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */,
+				FBF074FD1796FA990060EFA0 /* ODRefreshControl.m in Sources */,
+				FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@
 #import "RNBlurModalView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WordLetterFilterViewController.h"
+#import "SVPullToRefresh.h"
 
 #define longPressTime 1
 #define sizeOfLetterButton kScreenWidth/7.0
@@ -54,7 +55,7 @@
     
     arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     //Set up table
     mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight) style:UITableViewStylePlain];
@@ -62,22 +63,29 @@
     mainTable.dataSource = self;
     [self.view addSubview:mainTable];
     
+    __weak WordPuzzleSecondViewController *weakSelf = self;
+    
+    // setup pull-to-refresh
+    [mainTable addPullToRefreshWithActionHandler:^{
+        [weakSelf dropViewDidBeginRefreshing];
+    }];
+    
     //Add explain label in the bottom
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight + kScreenToolBarHeight/3.0, kScreenWidth, kScreenToolBarHeight/3.0*2)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"Swipe and hold on this area";
     label.textColor = [UIColor blackColor];
-    label.backgroundColor = [UIColor clearColor];
+    label.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:label];
     
     //Add index label in the bottom
     for (int i = 1; i <= self.sizeOfWord; i++) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/(float)self.sizeOfWord*(i-1), kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight, kScreenWidth/(float)self.sizeOfWord, kScreenToolBarHeight/3.0)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWidth/self.sizeOfWord*(i-1)-1, kContentHeight-kScreenNavigationBarHeight-kScreenToolBarHeight+1, kScreenWidth/self.sizeOfWord+2, kScreenToolBarHeight/3.0)];
         label.textAlignment = NSTextAlignmentCenter;
         label.text = [NSString stringWithFormat:@"%d", i];
         label.textColor = [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0];
-        label.backgroundColor = [UIColor clearColor];
+        label.backgroundColor = [UIColor whiteColor];
         label.font = [UIFont systemFontOfSize:10];
         
         [self.view addSubview:label];
@@ -93,12 +101,14 @@
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(letterButton)];
+    /*
     UIBarButtonItem *resetButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Reset"
                                     style:UIBarButtonItemStyleBordered
                                     target:self
                                     action:@selector(resetButton)];
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:clearButton, resetButton, nil];
+     */
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:clearButton, nil];
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -111,6 +121,15 @@
 }
 
 #pragma mark - Self functions
+- (void)dropViewDidBeginRefreshing{
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+        [self setup];
+        [mainTable.pullToRefreshView stopAnimating];
+    });
+}
 - (void)buttonClick:(UIButton *)sender{
     isLocked = NO;
     
@@ -240,11 +259,12 @@
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
 }
 - (void)doPermute:(NSMutableArray *)input output:(NSMutableArray *)output used:(NSMutableArray *)used size:(int)size level:(int)level{
-    NSLog(@"running");
     if (size == level) {
         NSString *word = [output componentsJoinedByString:@""];
         if ([arrayOfWords containsObject:word]) {
-            [results addObject:word];
+            if (![results containsObject:word]) {
+                [results addObject:word];
+            }
         }
         return;
     }
@@ -252,12 +272,18 @@
     level++;
     
     for (int i = 0; i < input.count; i++) {
+        
         if ([used[i] boolValue]) {
             continue;
         }
         used[i] = [NSNumber numberWithBool:YES];
-        
         [output addObject:input[i]];
+        
+        if (![self carryonPermute:[output componentsJoinedByString:@""] withLevel:level]) {
+            used[i] = [NSNumber numberWithBool:NO];
+            [output removeLastObject];
+            continue;
+        }
         
         [self doPermute:input output:output used:used size:size level:level];
         //doPermute(input, output, used, size, level);
@@ -284,6 +310,20 @@
     [self doPermute:chars output:output used:used size:size level:0];
     //NSLog(@"%@", results);
     return results;
+}
+- (BOOL)carryonPermute:(NSString *)output withLevel:(int)level{
+    BOOL rtn = NO;
+    
+    for (NSString *string in arrayOfWords) {
+        //NSLog(@"%@ %@", [string substringWithRange:NSMakeRange(0, level)], output);
+        
+        if ([[string substringWithRange:NSMakeRange(0, level)] isEqualToString:output]) {
+            rtn = YES;
+            break;
+        }
+    }
+    
+    return rtn;
 }
 
 #pragma mark - Table View Data Source Methods

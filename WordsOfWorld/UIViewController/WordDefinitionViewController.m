@@ -53,6 +53,10 @@
     mainTextView.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:mainTextView];
 }
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:YES];
+    [SVProgressHUD dismiss];
+}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
