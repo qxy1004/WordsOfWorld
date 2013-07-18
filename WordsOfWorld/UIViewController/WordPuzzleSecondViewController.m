@@ -23,14 +23,14 @@
 
 @interface WordPuzzleSecondViewController () <UITableViewDataSource, UITableViewDelegate, LetterFilter>{
     UITableView *mainTable;
-    NSArray *arrayOfWords;
+    NSMutableArray *arrayOfWords;
     UIView *verticalView;
     
     RNBlurModalView *modal;
     BOOL isLocked;
     
     int indexOfChoosen;
-    NSMutableArray *results;
+    NSString *stringFilterFromModalView;
 }
 
 @end
@@ -45,6 +45,12 @@
     }
     return self;
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    if (stringFilterFromModalView != nil) {
+        [self filterWordsByString:stringFilterFromModalView];
+    }
+}
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self.tabBarController setHidden:YES];
@@ -53,7 +59,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+    [self defaultArrayOfWords];
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
     self.view.backgroundColor = [UIColor blackColor];
     
@@ -101,14 +107,11 @@
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(letterButton)];
-    /*
-    UIBarButtonItem *resetButton = [[UIBarButtonItem alloc]
-                                    initWithTitle:@"Reset"
-                                    style:UIBarButtonItemStyleBordered
-                                    target:self
-                                    action:@selector(resetButton)];
-     */
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:clearButton, nil];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    stringFilterFromModalView = nil;
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -121,11 +124,17 @@
 }
 
 #pragma mark - Self functions
+- (void)defaultArrayOfWords{
+    if (arrayOfWords != nil) {
+        [arrayOfWords removeAllObjects];
+    }
+    arrayOfWords = (NSMutableArray *)[WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+}
 - (void)dropViewDidBeginRefreshing{
     int64_t delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+        [self defaultArrayOfWords];
         [self setup];
         [mainTable.pullToRefreshView stopAnimating];
     });
@@ -146,7 +155,7 @@
         [modal hideWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut completion:^{
             //Update UITableView
             NSLog(@"Press clear button");
-            arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
+            [self defaultArrayOfWords];
             [self setup];
         }];
     }
@@ -249,15 +258,12 @@
     navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:navController animated:YES completion:nil];
 }
-- (void)resetButton{
-    arrayOfWords = [WWCoreFunction loadWords:[NSString stringWithFormat:@"%d", self.sizeOfWord]];
-    [self setup];
-}
 - (void)setup{
     [mainTable reloadData];
     indexOfChoosen = -1;
     self.title = [NSString stringWithFormat:@"%d Letters (%d)", self.sizeOfWord, [arrayOfWords count]];
 }
+/*
 - (void)doPermute:(NSMutableArray *)input output:(NSMutableArray *)output used:(NSMutableArray *)used size:(int)size level:(int)level{
     if (size == level) {
         NSString *word = [output componentsJoinedByString:@""];
@@ -324,6 +330,34 @@
     }
     
     return rtn;
+}
+ */
+- (void)filterWordsByString:(NSString *)string{
+    NSMutableArray *results = [NSMutableArray arrayWithArray:arrayOfWords];
+    [arrayOfWords removeAllObjects];
+    [self setup];
+    
+    for (NSString *word in results) {
+        BOOL isWordOK = YES;
+        for (int i = 0; i < [word length]; i++) {
+            NSRange range = [string rangeOfString:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]];
+            if (range.length > 0){
+                continue;
+            }
+            else {
+                isWordOK = NO;
+                break;
+            }
+        }
+        if (isWordOK) {
+            int64_t delayInSeconds = 1.0;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [arrayOfWords addObject:word];
+                [self setup];
+            });
+        }
+    }
 }
 
 #pragma mark - Table View Data Source Methods
@@ -450,18 +484,13 @@
 - (void)getLetterFilter:(NSString *)string{
     NSLog(@"%@", string);
     if ([string length] < self.sizeOfWord) {
-        arrayOfWords = nil;
-        arrayOfWords = [NSArray new];
+        [arrayOfWords removeAllObjects];
         [self setup];
         return;
     }
-    /*
-    for (int i = 0; i < [array count]; i++) {
-        [self loopFiltering:arrayOfWords withCharacter:[array objectAtIndex:0] withIndex:0];
-    }
-     */
-    arrayOfWords = [self getPermutations:string size:self.sizeOfWord];
-    [self setup];
+    
+    [self defaultArrayOfWords];
+    stringFilterFromModalView = string;
 }
 
 @end

@@ -27,12 +27,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = TITLE_PUZZLE;
+        self.tabBarController.tabBarItem.title = TITLE_PUZZLE;
     }
     return self;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.navigationItem.title = @"Puzzle helper";
     [self.tabBarController setHidden:NO];
 }
 - (void)viewDidLoad{
@@ -62,6 +63,10 @@
         }
     }
 }
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    self.navigationItem.title = @"Helper";
+}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -71,7 +76,6 @@
 	NSLog(@"dealloc %@", self);
 #endif
 }
-
 
 #pragma mark - Self functions
 - (void)buttonClick:(UIButton *)sender{

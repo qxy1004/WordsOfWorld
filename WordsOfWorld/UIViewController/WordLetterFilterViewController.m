@@ -48,12 +48,19 @@
     
     [self.view addSubview:textField];
     
-    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc]
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Done"
                                     style:UIBarButtonItemStyleBordered
                                     target:self
                                     action:@selector(doneButton)];
-    self.navigationItem.rightBarButtonItem = clearButton;
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(cancelButton)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
 }
 - (void)dealloc{
 #ifdef DEBUG
@@ -67,16 +74,10 @@
 
 #pragma mark - Self functions
 - (void)doneButton{
-    /*
-    NSMutableArray *rtn = [NSMutableArray new];
-    NSString *string = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    for (int i = 0; i < [string length]; i++) {
-        [rtn addObject:[[NSString stringWithFormat:@"%c",[string characterAtIndex:i]] lowercaseString]];
-    }
-     [self.delegate getLetterFilter:[rtn sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)]];
-     */
     [self.delegate getLetterFilter:[[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] lowercaseString]];
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)cancelButton{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
