@@ -27,13 +27,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.tabBarController.tabBarItem.title = TITLE_PUZZLE;
+        self.title = TITLE_PUZZLE;
     }
     return self;
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    self.navigationItem.title = @"Puzzle helper";
+    self.navigationItem.title = @"Puzzle Helper";
     [self.tabBarController setHidden:NO];
 }
 - (void)viewDidLoad{
@@ -65,7 +65,7 @@
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
-    self.navigationItem.title = @"Helper";
+    self.navigationItem.title = TITLE_PUZZLE;
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

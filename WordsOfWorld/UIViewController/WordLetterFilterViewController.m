@@ -56,7 +56,7 @@
     self.navigationItem.rightBarButtonItem = doneButton;
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Done"
+                                   initWithTitle:@"Cancel"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(cancelButton)];

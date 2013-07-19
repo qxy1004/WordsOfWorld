@@ -15,7 +15,7 @@
 #import "SVProgressHUD.h"
 
 @interface WordDefinitionViewController () <WWDictionaryWS>{
-    UITextView *mainTextView;
+    DALinedTextView *mainTextView;
 }
 
 @end

@@ -483,11 +483,6 @@
 #pragma mark - LetterFilter delegate
 - (void)getLetterFilter:(NSString *)string{
     NSLog(@"%@", string);
-    if ([string length] < self.sizeOfWord) {
-        [arrayOfWords removeAllObjects];
-        [self setup];
-        return;
-    }
     
     [self defaultArrayOfWords];
     stringFilterFromModalView = string;

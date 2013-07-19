@@ -37,6 +37,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    self.navigationItem.title = @"Find & Dictionary";
     [self.tabBarController setHidden:NO];
 }
 - (void)viewDidLoad{
@@ -48,7 +49,7 @@
     arrayOfSearch = [[NSMutableArray alloc] init];
     
     //Set up table
-    mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, kContentHeight) style:UITableViewStylePlain];
+    mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kScreenWidth, kContentHeight-kScreenToolBarHeight-kScreenNavigationBarHeight-44) style:UITableViewStylePlain];
     mainTable.delegate = self;
     mainTable.dataSource = self;
     mainTable.backgroundColor = [UIColor clearColor];
@@ -69,7 +70,10 @@
     searchDisplayController.searchResultsDataSource = self;
     searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.delegate = self;
-    
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    self.navigationItem.title = TITLE_DICTIONARY;
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
