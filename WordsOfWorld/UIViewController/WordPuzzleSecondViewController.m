@@ -103,7 +103,7 @@
     
     //Add Clear button
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Letters"
+                                   initWithTitle:@"Filter"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(letterButton)];

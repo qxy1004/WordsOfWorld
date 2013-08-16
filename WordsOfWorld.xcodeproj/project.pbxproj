@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBA3974417BE1B5900B68E90 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA3974317BE1B5900B68E90 /* MessageUI.framework */; };
 		FBB6C97A1799344B0050571E /* WordStatisticsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB6C9791799344B0050571E /* WordStatisticsDetailViewController.m */; };
 		FBF07183178D58CD0060EFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07182178D58CD0060EFA0 /* UIKit.framework */; };
 		FBF07185178D58CD0060EFA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07184178D58CD0060EFA0 /* Foundation.framework */; };
@@ -407,6 +408,8 @@
 		FBF074FD1796FA990060EFA0 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */; };
 		FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */; };
 		FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */; };
+		FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */; };
+		FBF5A34317BA6D1700381D3D /* MJNIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A34217BA6D1700381D3D /* MJNIndexView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -420,6 +423,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FBA3974317BE1B5900B68E90 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FBB6C9781799344A0050571E /* WordStatisticsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordStatisticsDetailViewController.h; sourceTree = "<group>"; };
 		FBB6C9791799344B0050571E /* WordStatisticsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordStatisticsDetailViewController.m; sourceTree = "<group>"; };
 		FBB6C97B1799368E0050571E /* WWDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDefine.h; sourceTree = "<group>"; };
@@ -849,6 +853,10 @@
 		FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		FBF075021796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		FBF5A33D17BA551800381D3D /* WordPuzzleAllSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPuzzleAllSecondViewController.h; sourceTree = "<group>"; };
+		FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPuzzleAllSecondViewController.m; sourceTree = "<group>"; };
+		FBF5A34117BA6D1700381D3D /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
+		FBF5A34217BA6D1700381D3D /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -856,6 +864,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA3974417BE1B5900B68E90 /* MessageUI.framework in Frameworks */,
 				FBF074E917904A950060EFA0 /* Accelerate.framework in Frameworks */,
 				FBF074E717904A860060EFA0 /* CoreImage.framework in Frameworks */,
 				FBF074E517904A300060EFA0 /* QuartzCore.framework in Frameworks */,
@@ -900,6 +909,7 @@
 		FBF07181178D58CD0060EFA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBA3974317BE1B5900B68E90 /* MessageUI.framework */,
 				FBF074E817904A950060EFA0 /* Accelerate.framework */,
 				FBF074E617904A850060EFA0 /* CoreImage.framework */,
 				FBF074E417904A300060EFA0 /* QuartzCore.framework */,
@@ -962,6 +972,7 @@
 		FBF071D0178D5BCB0060EFA0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FBF5A34017BA6D1700381D3D /* MJNIndexView */,
 				FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */,
 				FBF074FA1796FA980060EFA0 /* ODRefreshControl */,
 				FBF074F1179550020060EFA0 /* SVProgressHUD */,
@@ -1019,6 +1030,8 @@
 				FBF071F5178D7DAD0060EFA0 /* WordDefinitionViewController.m */,
 				FBF071D9178D5C550060EFA0 /* WordPuzzleHelperViewController.h */,
 				FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */,
+				FBF5A33D17BA551800381D3D /* WordPuzzleAllSecondViewController.h */,
+				FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */,
 				FBF074D51790072C0060EFA0 /* WordPuzzleSecondViewController.h */,
 				FBF074D61790072C0060EFA0 /* WordPuzzleSecondViewController.m */,
 				FBF074F7179567660060EFA0 /* WordLetterFilterViewController.h */,
@@ -1545,6 +1558,15 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		FBF5A34017BA6D1700381D3D /* MJNIndexView */ = {
+			isa = PBXGroup;
+			children = (
+				FBF5A34117BA6D1700381D3D /* MJNIndexView.h */,
+				FBF5A34217BA6D1700381D3D /* MJNIndexView.m */,
+			);
+			path = MJNIndexView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2039,6 +2061,8 @@
 				FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				FBB6C97A1799344B0050571E /* WordStatisticsDetailViewController.m in Sources */,
+				FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */,
+				FBF5A34317BA6D1700381D3D /* MJNIndexView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,9 @@
 #import "BQDefine.h"
 #import "WordStatisticsDetailViewController.h"
 #import "WWDefine.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface WordStatisticsViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface WordStatisticsViewController () <MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *mainTable;
     NSArray *arrayOfList;
 }
@@ -56,13 +57,15 @@
                     [NSArray arrayWithObjects:Title4, Detail4, nil],
                     [NSArray arrayWithObjects:Title5, Detail5, nil],
                     [NSArray arrayWithObjects:Title6, Detail6, nil],
-                    [NSArray arrayWithObjects:Title7, Detail7, nil],
-                    [NSArray arrayWithObjects:Title8, Detail8, nil],
-                    [NSArray arrayWithObjects:Title9, Detail9, nil],
-                    [NSArray arrayWithObjects:Title10, Detail10, nil],
-                    [NSArray arrayWithObjects:Title11, Detail11, nil],
-                    [NSArray arrayWithObjects:Title12, Detail12, nil],
                     nil];
+    
+    //Add Clear button
+    UIBarButtonItem *ideaButton = [[UIBarButtonItem alloc]
+                                    initWithTitle:@"Add"
+                                    style:UIBarButtonItemStyleBordered
+                                    target:self
+                                    action:@selector(ideaButton)];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:ideaButton, nil];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
@@ -76,6 +79,39 @@
 #ifdef DEBUG
 	NSLog(@"dealloc %@", self);
 #endif
+}
+
+#pragma mark - Self functions
+- (void)ideaButton{
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setToRecipients:[NSArray arrayWithObjects:@"admin@xueyuan.co.uk", nil]];
+        [controller setSubject:@"More statistics!"];
+        
+        NSMutableString *emailBody = [NSMutableString new];
+        [emailBody appendString:@"Description:"];
+        [emailBody appendString:@"\n\n\n\n\n\n"];
+        
+        [emailBody appendString:@"Help us to improve this app. Thanks in advance : )"];
+        
+        [controller setMessageBody:emailBody isHTML:NO];
+        
+        if (controller) [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        // Handle the error
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can not be able to send email. Please add email account to your iOS" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table View Data Source Methods

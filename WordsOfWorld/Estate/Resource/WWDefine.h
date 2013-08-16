@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Brian Quan. All rights reserved.
 //
 
+//Statistics
 #define Title1 @"longest word"
 #define Detail1 @"Methionylthreonylthreonylglutaminylarginyl...isoleucine (189,819 letters):\n\nChemical name of titin, the largest known protein.\n\nReference from Wikipedia"
 
@@ -44,3 +45,19 @@
 
 #define Title13 @"Help me!555"
 #define Detail13 @""
+
+//Settings
+#define SettingsTitle1 @"About"
+#define SettingsDetail1 @"\"Words World\" is an application that help people to find words after filtering letters. It can be used in any word puzzle games like \"Word cross\", \"4 pics in 1 word\" or \"Letterpress\" and so on. With a nice way to filter words, it is very user friendly and easy to use.\n\n\"Words World\" is make with full love."
+
+#define SettingsTitle2 @"Guide"
+#define SettingsDetail2 @"1. Find & Dictionary\n\nFind a word and its definition.\n\n2. Puzzle Helper\n\nChoose the length of words and swipe the bottom area and hold on. And then choose specific letter to filter. Or click \"Filter\" button on the top right corner. And then, enter letters which are used in the words.\n\n3. Interesting Statistics\n\nList all interesting word statistics.\n\n\n*Tell us your idea by clicking \"Feedback\". Let us improve this app together : )"
+
+#define SettingsTitle3 @"Licenses"
+#define SettingsDetail3 @""
+
+#define SettingsTitle4 @"Feedback"
+#define SettingsDetail4 @""
+
+#define SettingsTitle5 @"Rate"
+#define SettingsDetail5 @""
