@@ -15,6 +15,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WordLetterFilterViewController.h"
 #import "SVPullToRefresh.h"
+#import "SVProgressHUD.h"
 
 #define longPressTime 1
 #define sizeOfLetterButton kScreenWidth/7.0
@@ -31,6 +32,8 @@
     
     int indexOfChoosen;
     NSString *stringFilterFromModalView;
+    
+    UIBarButtonItem *letterButton;
 }
 
 @end
@@ -47,13 +50,14 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    if (stringFilterFromModalView != nil) {
-        [self filterWordsByString:stringFilterFromModalView];
-    }
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self.tabBarController setHidden:YES];
+    
+    if (stringFilterFromModalView != nil) {
+        [self filterWordsByString:stringFilterFromModalView];
+    }
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -102,12 +106,12 @@
     indexOfChoosen = -1;
     
     //Add Clear button
-    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc]
+    letterButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Filter"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(letterButton)];
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:clearButton, nil];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:letterButton, nil];
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
@@ -333,31 +337,40 @@
 }
  */
 - (void)filterWordsByString:(NSString *)string{
+    [SVProgressHUD showWithStatus:@"Processing"];
+    self.navigationItem.rightBarButtonItems = nil;
+    
     NSMutableArray *results = [NSMutableArray arrayWithArray:arrayOfWords];
     [arrayOfWords removeAllObjects];
     [self setup];
     
-    for (NSString *word in results) {
-        BOOL isWordOK = YES;
-        for (int i = 0; i < [word length]; i++) {
-            NSRange range = [string rangeOfString:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]];
-            if (range.length > 0){
-                continue;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    
+    dispatch_async(queue, ^{
+        for (NSString *word in results) {
+            BOOL isWordOK = YES;
+            for (int i = 0; i < [word length]; i++) {
+                NSRange range = [string rangeOfString:[NSString stringWithFormat:@"%c", [word characterAtIndex:i]]];
+                if (range.length > 0){
+                    continue;
+                }
+                else {
+                    isWordOK = NO;
+                    break;
+                }
             }
-            else {
-                isWordOK = NO;
-                break;
+            if (isWordOK) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [arrayOfWords addObject:word];
+                    [self setup];
+                });
             }
         }
-        if (isWordOK) {
-            int64_t delayInSeconds = 1.0;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [arrayOfWords addObject:word];
-                [self setup];
-            });
-        }
-    }
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+            self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:letterButton, nil];
+        });
+    });
 }
 
 #pragma mark - Table View Data Source Methods

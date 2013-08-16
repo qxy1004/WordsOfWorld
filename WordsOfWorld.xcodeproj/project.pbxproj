@@ -409,7 +409,6 @@
 		FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */; };
 		FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */; };
 		FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */; };
-		FBF5A34317BA6D1700381D3D /* MJNIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A34217BA6D1700381D3D /* MJNIndexView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -855,8 +854,6 @@
 		FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		FBF5A33D17BA551800381D3D /* WordPuzzleAllSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPuzzleAllSecondViewController.h; sourceTree = "<group>"; };
 		FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPuzzleAllSecondViewController.m; sourceTree = "<group>"; };
-		FBF5A34117BA6D1700381D3D /* MJNIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJNIndexView.h; sourceTree = "<group>"; };
-		FBF5A34217BA6D1700381D3D /* MJNIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJNIndexView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -972,7 +969,6 @@
 		FBF071D0178D5BCB0060EFA0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				FBF5A34017BA6D1700381D3D /* MJNIndexView */,
 				FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */,
 				FBF074FA1796FA980060EFA0 /* ODRefreshControl */,
 				FBF074F1179550020060EFA0 /* SVProgressHUD */,
@@ -1558,15 +1554,6 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
-		FBF5A34017BA6D1700381D3D /* MJNIndexView */ = {
-			isa = PBXGroup;
-			children = (
-				FBF5A34117BA6D1700381D3D /* MJNIndexView.h */,
-				FBF5A34217BA6D1700381D3D /* MJNIndexView.m */,
-			);
-			path = MJNIndexView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2062,7 +2049,6 @@
 				FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				FBB6C97A1799344B0050571E /* WordStatisticsDetailViewController.m in Sources */,
 				FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */,
-				FBF5A34317BA6D1700381D3D /* MJNIndexView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

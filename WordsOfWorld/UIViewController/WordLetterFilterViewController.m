@@ -26,6 +26,9 @@
     }
     return self;
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+}
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [textField becomeFirstResponder];

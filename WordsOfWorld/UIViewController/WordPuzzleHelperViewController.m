@@ -37,6 +37,7 @@
     [super viewWillAppear:YES];
     self.navigationItem.title = @"Puzzle Helper";
     [self.tabBarController setHidden:NO];
+    [SVProgressHUD dismiss];
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
