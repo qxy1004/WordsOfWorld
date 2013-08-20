@@ -12,14 +12,14 @@
 #define animationTime 0.25
 #define letterSize 60
 #define gap1 100
-#define gap2 150
+#define gap2 170
 #define gap3 kScreenHeight
 #define offset1 10
 #define offset2 70
 #define offset3 130
 #define offset4 190
 #define offset5 250
-#define fontSize 50
+#define fontSize 55
 
 @interface SplashPageViewController (){
     UILabel *w1;
@@ -121,7 +121,7 @@
     [self.view addSubview:d2];
 }
 - (void)animation{
-    [UIView animateWithDuration:animationTime animations:^{
+    [UIView animateWithDuration:animationTime delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         w1.frame = CGRectMake(offset1, gap1, letterSize, letterSize);
         w2.frame = CGRectMake(offset1, gap2, letterSize, letterSize);
     } completion:^(BOOL finished) {

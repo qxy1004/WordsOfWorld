@@ -54,6 +54,7 @@
     mainTable.dataSource = self;
     mainTable.backgroundColor = [UIColor clearColor];
     mainTable.backgroundView = nil;
+    mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:mainTable];
     
     // setup searchBar and searchDisplayController

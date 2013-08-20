@@ -187,6 +187,8 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    stringFilterFromModalView = nil;
+    
     WordDefinitionViewController *definitionViewController = [[WordDefinitionViewController alloc] initWithNibName:nil bundle:nil];
     definitionViewController.string = [arrayOfWords objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:definitionViewController animated:YES];

@@ -50,6 +50,7 @@
     mainTable.dataSource = self;
     mainTable.backgroundColor = [UIColor clearColor];
     mainTable.backgroundView = nil;
+    mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:mainTable];
     
     arrayOfList = [NSArray arrayWithObjects:
