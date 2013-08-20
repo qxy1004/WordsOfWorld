@@ -67,6 +67,7 @@
             button.layer.borderColor = [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255.0/255.0 alpha:1.0].CGColor;
             button.layer.borderWidth = 0.5f;
             button.layer.cornerRadius = 10.0f;
+            
             [scrollView addSubview:button];
         }
     }

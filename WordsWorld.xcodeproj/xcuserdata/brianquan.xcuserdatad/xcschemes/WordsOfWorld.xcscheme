@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBF0717E178D58CD0060EFA0"
                BuildableName = "WordsOfWorld.app"
-               BlueprintName = "WordsOfWorld"
-               ReferencedContainer = "container:WordsOfWorld.xcodeproj">
+               BlueprintName = "WordsWorld"
+               ReferencedContainer = "container:WordsWorld.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBF071B2178D58CD0060EFA0"
                BuildableName = "WordsOfWorldTests.octest"
-               BlueprintName = "WordsOfWorldTests"
-               ReferencedContainer = "container:WordsOfWorld.xcodeproj">
+               BlueprintName = "WordsWorldTests"
+               ReferencedContainer = "container:WordsWorld.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF0717E178D58CD0060EFA0"
             BuildableName = "WordsOfWorld.app"
-            BlueprintName = "WordsOfWorld"
-            ReferencedContainer = "container:WordsOfWorld.xcodeproj">
+            BlueprintName = "WordsWorld"
+            ReferencedContainer = "container:WordsWorld.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF0717E178D58CD0060EFA0"
             BuildableName = "WordsOfWorld.app"
-            BlueprintName = "WordsOfWorld"
-            ReferencedContainer = "container:WordsOfWorld.xcodeproj">
+            BlueprintName = "WordsWorld"
+            ReferencedContainer = "container:WordsWorld.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBF0717E178D58CD0060EFA0"
             BuildableName = "WordsOfWorld.app"
-            BlueprintName = "WordsOfWorld"
-            ReferencedContainer = "container:WordsOfWorld.xcodeproj">
+            BlueprintName = "WordsWorld"
+            ReferencedContainer = "container:WordsWorld.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -94,7 +94,7 @@
         [emailBody appendString:@"Description:"];
         [emailBody appendString:@"\n\n\n\n\n\n"];
         
-        [emailBody appendString:@"Help us to improve this app. Thanks in advance : )"];
+        [emailBody appendString:@"Let's improve WW."];
         
         [controller setMessageBody:emailBody isHTML:NO];
         

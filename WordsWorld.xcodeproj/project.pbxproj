@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB008E8017C3647A004BDBA0 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB008E7D17C3647A004BDBA0 /* iRate.bundle */; };
+		FB008E8117C3647A004BDBA0 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB008E7F17C3647A004BDBA0 /* iRate.m */; };
+		FB008E8317C365E6004BDBA0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB008E8217C365E6004BDBA0 /* StoreKit.framework */; };
+		FB008E8617C36D74004BDBA0 /* WordLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB008E8517C36D74004BDBA0 /* WordLicenseViewController.m */; };
+		FB008E8917C37A1F004BDBA0 /* SplashPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB008E8817C37A1F004BDBA0 /* SplashPageViewController.m */; };
 		FBA3974417BE1B5900B68E90 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA3974317BE1B5900B68E90 /* MessageUI.framework */; };
 		FBB6C97A1799344B0050571E /* WordStatisticsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB6C9791799344B0050571E /* WordStatisticsDetailViewController.m */; };
 		FBF07183178D58CD0060EFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07182178D58CD0060EFA0 /* UIKit.framework */; };
@@ -22,7 +27,7 @@
 		FBF071B6178D58CD0060EFA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07182178D58CD0060EFA0 /* UIKit.framework */; };
 		FBF071B7178D58CD0060EFA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF07184178D58CD0060EFA0 /* Foundation.framework */; };
 		FBF071BF178D58CD0060EFA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBF071BD178D58CD0060EFA0 /* InfoPlist.strings */; };
-		FBF071C2178D58CD0060EFA0 /* WordsOfWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071C1178D58CD0060EFA0 /* WordsOfWorldTests.m */; };
+		FBF071C2178D58CD0060EFA0 /* WordsWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071C1178D58CD0060EFA0 /* WordsWorldTests.m */; };
 		FBF071D8178D5C210060EFA0 /* WordDictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */; };
 		FBF071DB178D5C550060EFA0 /* WordPuzzleHelperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071DA178D5C550060EFA0 /* WordPuzzleHelperViewController.m */; };
 		FBF071DE178D5C790060EFA0 /* WordStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF071DD178D5C790060EFA0 /* WordStatisticsViewController.m */; };
@@ -405,7 +410,6 @@
 		FBF074F5179550020060EFA0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FBF074F2179550020060EFA0 /* SVProgressHUD.bundle */; };
 		FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F4179550020060EFA0 /* SVProgressHUD.m */; };
 		FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */; };
-		FBF074FD1796FA990060EFA0 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */; };
 		FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */; };
 		FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF075031796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m */; };
 		FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF5A33E17BA551900381D3D /* WordPuzzleAllSecondViewController.m */; };
@@ -422,29 +426,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB008E7D17C3647A004BDBA0 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		FB008E7E17C3647A004BDBA0 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		FB008E7F17C3647A004BDBA0 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		FB008E8217C365E6004BDBA0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FB008E8417C36D74004BDBA0 /* WordLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordLicenseViewController.h; sourceTree = "<group>"; };
+		FB008E8517C36D74004BDBA0 /* WordLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordLicenseViewController.m; sourceTree = "<group>"; };
+		FB008E8717C37A1E004BDBA0 /* SplashPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashPageViewController.h; sourceTree = "<group>"; };
+		FB008E8817C37A1F004BDBA0 /* SplashPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashPageViewController.m; sourceTree = "<group>"; };
 		FBA3974317BE1B5900B68E90 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FBB6C9781799344A0050571E /* WordStatisticsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordStatisticsDetailViewController.h; sourceTree = "<group>"; };
 		FBB6C9791799344B0050571E /* WordStatisticsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordStatisticsDetailViewController.m; sourceTree = "<group>"; };
 		FBB6C97B1799368E0050571E /* WWDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWDefine.h; sourceTree = "<group>"; };
-		FBF0717F178D58CD0060EFA0 /* WordsOfWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordsOfWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF0717F178D58CD0060EFA0 /* WordsWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordsWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF07182178D58CD0060EFA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FBF07184178D58CD0060EFA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBF07186178D58CD0060EFA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FBF0718A178D58CD0060EFA0 /* WordsOfWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsOfWorld-Info.plist"; sourceTree = "<group>"; };
+		FBF0718A178D58CD0060EFA0 /* WordsWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsWorld-Info.plist"; sourceTree = "<group>"; };
 		FBF0718C178D58CD0060EFA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FBF0718E178D58CD0060EFA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FBF07190178D58CD0060EFA0 /* WordsOfWorld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordsOfWorld-Prefix.pch"; sourceTree = "<group>"; };
+		FBF07190178D58CD0060EFA0 /* WordsWorld-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordsWorld-Prefix.pch"; sourceTree = "<group>"; };
 		FBF07191178D58CD0060EFA0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBF07192178D58CD0060EFA0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FBF07194178D58CD0060EFA0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FBF07196178D58CD0060EFA0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FBF07198178D58CD0060EFA0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FBF071B3178D58CD0060EFA0 /* WordsOfWorldTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsOfWorldTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF071B3178D58CD0060EFA0 /* WordsWorldTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordsWorldTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF071B4178D58CD0060EFA0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		FBF071BC178D58CD0060EFA0 /* WordsOfWorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsOfWorldTests-Info.plist"; sourceTree = "<group>"; };
+		FBF071BC178D58CD0060EFA0 /* WordsWorldTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordsWorldTests-Info.plist"; sourceTree = "<group>"; };
 		FBF071BE178D58CD0060EFA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FBF071C0178D58CD0060EFA0 /* WordsOfWorldTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsOfWorldTests.h; sourceTree = "<group>"; };
-		FBF071C1178D58CD0060EFA0 /* WordsOfWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsOfWorldTests.m; sourceTree = "<group>"; };
+		FBF071C0178D58CD0060EFA0 /* WordsWorldTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordsWorldTests.h; sourceTree = "<group>"; };
+		FBF071C1178D58CD0060EFA0 /* WordsWorldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordsWorldTests.m; sourceTree = "<group>"; };
 		FBF071D6178D5C210060EFA0 /* WordDictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordDictionaryViewController.h; sourceTree = "<group>"; };
 		FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordDictionaryViewController.m; sourceTree = "<group>"; };
 		FBF071D9178D5C550060EFA0 /* WordPuzzleHelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPuzzleHelperViewController.h; sourceTree = "<group>"; };
@@ -845,8 +857,6 @@
 		FBF074F4179550020060EFA0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		FBF074F7179567660060EFA0 /* WordLetterFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordLetterFilterViewController.h; sourceTree = "<group>"; };
 		FBF074F8179567660060EFA0 /* WordLetterFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordLetterFilterViewController.m; sourceTree = "<group>"; };
-		FBF074FB1796FA990060EFA0 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
-		FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		FBF074FF1796FD2D0060EFA0 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		FBF075001796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		FBF075011796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -861,6 +871,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB008E8317C365E6004BDBA0 /* StoreKit.framework in Frameworks */,
 				FBA3974417BE1B5900B68E90 /* MessageUI.framework in Frameworks */,
 				FBF074E917904A950060EFA0 /* Accelerate.framework in Frameworks */,
 				FBF074E717904A860060EFA0 /* CoreImage.framework in Frameworks */,
@@ -884,11 +895,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB008E7C17C3647A004BDBA0 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				FB008E7D17C3647A004BDBA0 /* iRate.bundle */,
+				FB008E7E17C3647A004BDBA0 /* iRate.h */,
+				FB008E7F17C3647A004BDBA0 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
 		FBF07176178D58CD0060EFA0 = {
 			isa = PBXGroup;
 			children = (
 				FBF07188178D58CD0060EFA0 /* WordsOfWorld */,
-				FBF071BA178D58CD0060EFA0 /* WordsOfWorldTests */,
+				FBF071BA178D58CD0060EFA0 /* WordsWorldTests */,
 				FBF07181178D58CD0060EFA0 /* Frameworks */,
 				FBF07180178D58CD0060EFA0 /* Products */,
 			);
@@ -897,8 +918,8 @@
 		FBF07180178D58CD0060EFA0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBF0717F178D58CD0060EFA0 /* WordsOfWorld.app */,
-				FBF071B3178D58CD0060EFA0 /* WordsOfWorldTests.octest */,
+				FBF0717F178D58CD0060EFA0 /* WordsWorld.app */,
+				FBF071B3178D58CD0060EFA0 /* WordsWorldTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -906,6 +927,7 @@
 		FBF07181178D58CD0060EFA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB008E8217C365E6004BDBA0 /* StoreKit.framework */,
 				FBA3974317BE1B5900B68E90 /* MessageUI.framework */,
 				FBF074E817904A950060EFA0 /* Accelerate.framework */,
 				FBF074E617904A850060EFA0 /* CoreImage.framework */,
@@ -936,10 +958,10 @@
 		FBF07189178D58CD0060EFA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBF0718A178D58CD0060EFA0 /* WordsOfWorld-Info.plist */,
+				FBF0718A178D58CD0060EFA0 /* WordsWorld-Info.plist */,
 				FBF0718B178D58CD0060EFA0 /* InfoPlist.strings */,
 				FBF0718E178D58CD0060EFA0 /* main.m */,
-				FBF07190178D58CD0060EFA0 /* WordsOfWorld-Prefix.pch */,
+				FBF07190178D58CD0060EFA0 /* WordsWorld-Prefix.pch */,
 				FBF07194178D58CD0060EFA0 /* Default.png */,
 				FBF07196178D58CD0060EFA0 /* Default@2x.png */,
 				FBF07198178D58CD0060EFA0 /* Default-568h@2x.png */,
@@ -947,20 +969,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FBF071BA178D58CD0060EFA0 /* WordsOfWorldTests */ = {
+		FBF071BA178D58CD0060EFA0 /* WordsWorldTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBF071C0178D58CD0060EFA0 /* WordsOfWorldTests.h */,
-				FBF071C1178D58CD0060EFA0 /* WordsOfWorldTests.m */,
+				FBF071C0178D58CD0060EFA0 /* WordsWorldTests.h */,
+				FBF071C1178D58CD0060EFA0 /* WordsWorldTests.m */,
 				FBF071BB178D58CD0060EFA0 /* Supporting Files */,
 			);
+			name = WordsWorldTests;
 			path = WordsOfWorldTests;
 			sourceTree = "<group>";
 		};
 		FBF071BB178D58CD0060EFA0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBF071BC178D58CD0060EFA0 /* WordsOfWorldTests-Info.plist */,
+				FBF071BC178D58CD0060EFA0 /* WordsWorldTests-Info.plist */,
 				FBF071BD178D58CD0060EFA0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -969,8 +992,8 @@
 		FBF071D0178D5BCB0060EFA0 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FB008E7C17C3647A004BDBA0 /* iRate */,
 				FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */,
-				FBF074FA1796FA980060EFA0 /* ODRefreshControl */,
 				FBF074F1179550020060EFA0 /* SVProgressHUD */,
 				FBF074ED17953E3C0060EFA0 /* DictionaryWS */,
 				FBF074E0179049C40060EFA0 /* RNBlurModalView */,
@@ -1020,6 +1043,8 @@
 		FBF071D5178D5BCB0060EFA0 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FB008E8717C37A1E004BDBA0 /* SplashPageViewController.h */,
+				FB008E8817C37A1F004BDBA0 /* SplashPageViewController.m */,
 				FBF071D6178D5C210060EFA0 /* WordDictionaryViewController.h */,
 				FBF071D7178D5C210060EFA0 /* WordDictionaryViewController.m */,
 				FBF071F4178D7DAD0060EFA0 /* WordDefinitionViewController.h */,
@@ -1040,6 +1065,8 @@
 				FBF071E0178D5C8C0060EFA0 /* WordMasterViewController.m */,
 				FBF071E2178D5CAD0060EFA0 /* SettingsViewController.h */,
 				FBF071E3178D5CAD0060EFA0 /* SettingsViewController.m */,
+				FB008E8417C36D74004BDBA0 /* WordLicenseViewController.h */,
+				FB008E8517C36D74004BDBA0 /* WordLicenseViewController.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -1533,15 +1560,6 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
-		FBF074FA1796FA980060EFA0 /* ODRefreshControl */ = {
-			isa = PBXGroup;
-			children = (
-				FBF074FB1796FA990060EFA0 /* ODRefreshControl.h */,
-				FBF074FC1796FA990060EFA0 /* ODRefreshControl.m */,
-			);
-			path = ODRefreshControl;
-			sourceTree = "<group>";
-		};
 		FBF074FE1796FD2C0060EFA0 /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1557,9 +1575,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBF0717E178D58CD0060EFA0 /* WordsOfWorld */ = {
+		FBF0717E178D58CD0060EFA0 /* WordsWorld */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBF071C5178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsOfWorld" */;
+			buildConfigurationList = FBF071C5178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsWorld" */;
 			buildPhases = (
 				FBF0717B178D58CD0060EFA0 /* Sources */,
 				FBF0717C178D58CD0060EFA0 /* Frameworks */,
@@ -1569,14 +1587,14 @@
 			);
 			dependencies = (
 			);
-			name = WordsOfWorld;
+			name = WordsWorld;
 			productName = WordsOfWorld;
-			productReference = FBF0717F178D58CD0060EFA0 /* WordsOfWorld.app */;
+			productReference = FBF0717F178D58CD0060EFA0 /* WordsWorld.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FBF071B2178D58CD0060EFA0 /* WordsOfWorldTests */ = {
+		FBF071B2178D58CD0060EFA0 /* WordsWorldTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBF071C8178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsOfWorldTests" */;
+			buildConfigurationList = FBF071C8178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsWorldTests" */;
 			buildPhases = (
 				FBF071AE178D58CD0060EFA0 /* Sources */,
 				FBF071AF178D58CD0060EFA0 /* Frameworks */,
@@ -1588,9 +1606,9 @@
 			dependencies = (
 				FBF071B9178D58CD0060EFA0 /* PBXTargetDependency */,
 			);
-			name = WordsOfWorldTests;
+			name = WordsWorldTests;
 			productName = WordsOfWorldTests;
-			productReference = FBF071B3178D58CD0060EFA0 /* WordsOfWorldTests.octest */;
+			productReference = FBF071B3178D58CD0060EFA0 /* WordsWorldTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1602,7 +1620,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Brian Quan";
 			};
-			buildConfigurationList = FBF0717A178D58CD0060EFA0 /* Build configuration list for PBXProject "WordsOfWorld" */;
+			buildConfigurationList = FBF0717A178D58CD0060EFA0 /* Build configuration list for PBXProject "WordsWorld" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1614,8 +1632,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FBF0717E178D58CD0060EFA0 /* WordsOfWorld */,
-				FBF071B2178D58CD0060EFA0 /* WordsOfWorldTests */,
+				FBF0717E178D58CD0060EFA0 /* WordsWorld */,
+				FBF071B2178D58CD0060EFA0 /* WordsWorldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1991,6 +2009,7 @@
 				FBF074D3178FFE2C0060EFA0 /* 8.txt in Resources */,
 				FBF074D4178FFE2C0060EFA0 /* 9.txt in Resources */,
 				FBF074F5179550020060EFA0 /* SVProgressHUD.bundle in Resources */,
+				FB008E8017C3647A004BDBA0 /* iRate.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2044,11 +2063,13 @@
 				FBF074F017953E5C0060EFA0 /* WWDictionaryWS.m in Sources */,
 				FBF074F6179550020060EFA0 /* SVProgressHUD.m in Sources */,
 				FBF074F9179567670060EFA0 /* WordLetterFilterViewController.m in Sources */,
-				FBF074FD1796FA990060EFA0 /* ODRefreshControl.m in Sources */,
 				FBF075041796FD2D0060EFA0 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				FBF075051796FD2D0060EFA0 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				FBB6C97A1799344B0050571E /* WordStatisticsDetailViewController.m in Sources */,
 				FBF5A33F17BA551900381D3D /* WordPuzzleAllSecondViewController.m in Sources */,
+				FB008E8117C3647A004BDBA0 /* iRate.m in Sources */,
+				FB008E8617C36D74004BDBA0 /* WordLicenseViewController.m in Sources */,
+				FB008E8917C37A1F004BDBA0 /* SplashPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2056,7 +2077,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBF071C2178D58CD0060EFA0 /* WordsOfWorldTests.m in Sources */,
+				FBF071C2178D58CD0060EFA0 /* WordsWorldTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2065,7 +2086,7 @@
 /* Begin PBXTargetDependency section */
 		FBF071B9178D58CD0060EFA0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FBF0717E178D58CD0060EFA0 /* WordsOfWorld */;
+			target = FBF0717E178D58CD0060EFA0 /* WordsWorld */;
 			targetProxy = FBF071B8178D58CD0060EFA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2150,12 +2171,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
-				INFOPLIST_FILE = "WordsOfWorld/WordsOfWorld-Info.plist";
+				GCC_PREFIX_HEADER = "WordsOfWorld/WordsWorld-Prefix.pch";
+				INFOPLIST_FILE = "WordsOfWorld/WordsWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3C768000-53A9-45A7-9694-CCBD3C4E91DE";
+				PRODUCT_NAME = WordsWorld;
+				PROVISIONING_PROFILE = "6BD219F6-1C45-4513-A18A-D81B78819629";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6BD219F6-1C45-4513-A18A-D81B78819629";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2164,12 +2187,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xueyuan Quan (5D6M87T47P)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
-				INFOPLIST_FILE = "WordsOfWorld/WordsOfWorld-Info.plist";
+				GCC_PREFIX_HEADER = "WordsOfWorld/WordsWorld-Prefix.pch";
+				INFOPLIST_FILE = "WordsOfWorld/WordsWorld-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3C768000-53A9-45A7-9694-CCBD3C4E91DE";
+				PRODUCT_NAME = WordsWorld;
+				PROVISIONING_PROFILE = "6BD219F6-1C45-4513-A18A-D81B78819629";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6BD219F6-1C45-4513-A18A-D81B78819629";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -2184,8 +2209,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
-				INFOPLIST_FILE = "WordsOfWorldTests/WordsOfWorldTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WordsOfWorldTests/WordsWorldTests-Info.plist";
+				PRODUCT_NAME = WordsWorldTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2201,8 +2226,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordsOfWorld/WordsOfWorld-Prefix.pch";
-				INFOPLIST_FILE = "WordsOfWorldTests/WordsOfWorldTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "WordsOfWorldTests/WordsWorldTests-Info.plist";
+				PRODUCT_NAME = WordsWorldTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -2211,7 +2236,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBF0717A178D58CD0060EFA0 /* Build configuration list for PBXProject "WordsOfWorld" */ = {
+		FBF0717A178D58CD0060EFA0 /* Build configuration list for PBXProject "WordsWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBF071C3178D58CD0060EFA0 /* Debug */,
@@ -2220,7 +2245,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBF071C5178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsOfWorld" */ = {
+		FBF071C5178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsWorld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBF071C6178D58CD0060EFA0 /* Debug */,
@@ -2229,7 +2254,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBF071C8178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsOfWorldTests" */ = {
+		FBF071C8178D58CD0060EFA0 /* Build configuration list for PBXNativeTarget "WordsWorldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBF071C9178D58CD0060EFA0 /* Debug */,

@@ -13,8 +13,24 @@
 #import "WordStatisticsViewController.h"
 #import "WordMasterViewController.h"
 #import "SettingsViewController.h"
+#import "SplashPageViewController.h"
+
+#import "iRate.h"
 
 @implementation AppDelegate
+
++ (void)initialize
+{
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"uk.co.xueyuan.wordsworld";
+	[iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 15;
+    //enable preview mode
+    [iRate sharedInstance].previewMode = NO;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -82,9 +98,19 @@
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[self.window.rootViewController presentedViewController] dismissViewControllerAnimated:NO completion:nil];
+    //Add splash page
+    if (![self.window.rootViewController presentedViewController]) {
+        [self showSplashPage];
+    }
 }
 - (void)applicationWillTerminate:(UIApplication *)application{
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)showSplashPage{
+    SplashPageViewController *splashViewController = [[SplashPageViewController alloc]initWithNibName:nil bundle:nil];
+    [self.window.rootViewController presentViewController:splashViewController animated:NO completion:nil];
 }
 
 @end

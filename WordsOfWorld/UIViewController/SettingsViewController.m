@@ -13,8 +13,10 @@
 #import "BQDefine.h"
 #import "WWDefine.h"
 #import "WordStatisticsDetailViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
+#import "WordLicenseViewController.h"
 
-@interface SettingsViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface SettingsViewController () <MFMailComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *mainTable;
     NSArray *arrayOfList;
 }
@@ -55,7 +57,6 @@
                    [NSArray arrayWithObjects:SettingsTitle2, SettingsDetail2, nil],
                    [NSArray arrayWithObjects:SettingsTitle3, SettingsDetail3, nil],
                    [NSArray arrayWithObjects:SettingsTitle4, SettingsDetail4, nil],
-                   [NSArray arrayWithObjects:SettingsTitle5, SettingsDetail5, nil],
                    nil];
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -101,12 +102,56 @@
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    WordStatisticsDetailViewController *detailViewController = [[WordStatisticsDetailViewController alloc] initWithNibName:nil bundle:nil];
-    detailViewController.stringOfTitle = [[arrayOfList objectAtIndex:indexPath.row] objectAtIndex:0];
-    detailViewController.stringOfDetails = [[arrayOfList objectAtIndex:indexPath.row] objectAtIndex:1];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    switch (indexPath.row) {
+        case 2:
+        {//License
+            WordLicenseViewController *licenseViewController = [[WordLicenseViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:licenseViewController animated:YES];
+        }
+            break;
+        case 3:
+        {//Feedback
+            if ([MFMailComposeViewController canSendMail]) {
+                
+                MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+                controller.mailComposeDelegate = self;
+                [controller setToRecipients:[NSArray arrayWithObjects:@"admin@xueyuan.co.uk", nil]];
+                [controller setSubject:@"Feedback for Words World"];
+                
+                NSMutableString *emailBody = [NSMutableString new];
+                [emailBody appendString:@"Description:"];
+                [emailBody appendString:@"\n\n\n\n\n\n"];
+                
+                [emailBody appendString:@"Let's improve WW."];
+                
+                [controller setMessageBody:emailBody isHTML:NO];
+                
+                if (controller) [self presentViewController:controller animated:YES completion:nil];
+            } else {
+                // Handle the error
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Can not be able to send email. Please add email account to your iOS" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        }
+            break;
+        default:
+        {
+            WordStatisticsDetailViewController *detailViewController = [[WordStatisticsDetailViewController alloc] initWithNibName:nil bundle:nil];
+            detailViewController.stringOfTitle = [[arrayOfList objectAtIndex:indexPath.row] objectAtIndex:0];
+            detailViewController.stringOfDetails = [[arrayOfList objectAtIndex:indexPath.row] objectAtIndex:1];
+            [self.navigationController pushViewController:detailViewController animated:YES];
+        }
+            break;
+    }
 }
 
 #pragma mark - Self functions
-
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

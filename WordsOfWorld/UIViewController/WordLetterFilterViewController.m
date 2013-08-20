@@ -64,6 +64,14 @@
                                    target:self
                                    action:@selector(cancelButton)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UITextView *textView = [[UITextView alloc] init];
+    textView.frame = CGRectMake(10, 50, 300, 50);
+    textView.text = @"Please enter the letters which are used in the word.";
+    textView.userInteractionEnabled = NO;
+    [textView setFont:[UIFont systemFontOfSize:15]];
+    
+    [self.view addSubview:textView];
 }
 - (void)dealloc{
 #ifdef DEBUG

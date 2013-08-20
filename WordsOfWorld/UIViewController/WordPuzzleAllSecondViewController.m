@@ -178,6 +178,7 @@
         cell.textLabel.font = [UIFont systemFontOfSize:20];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     cell.textLabel.text = [arrayOfWords objectAtIndex:indexPath.row];
     
